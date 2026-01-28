@@ -83,7 +83,6 @@
                       v-for="tag in record.tags"
                       :key="tag"
                       :color="record.tagColor || 'blue'"
-                      closable
                       @close="removeTag(record, tag)"
                       class="ellipsis-tag"
                   >
@@ -149,7 +148,6 @@
 
 <script setup lang="ts">
 import { ref, computed, reactive, watch, onMounted, onUnmounted} from 'vue'
-import { message, theme } from 'ant-design-vue'
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import dayjs from 'dayjs'
@@ -470,4 +468,9 @@ onUnmounted(() => {
 .ant-btn-primary { box-shadow: none !important; }
 .ant-input:focus { box-shadow: none !important; }
 .ant-select-selector{ box-shadow: none !important; }
+
+
+
+.ant-tag{ transition: all 0.3s ease; margin: 2px 4px 2px 0; }
+.ant-tag:hover{ transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
 </style>
