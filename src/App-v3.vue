@@ -151,7 +151,6 @@ import { ref, computed, reactive, watch, onMounted, onUnmounted} from 'vue'
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import dayjs from 'dayjs'
-import { useDebounceFn } from '@vueuse/core'
 import {message} from "ant-design-vue";
 
 // --- 类型与常量 ---
@@ -179,9 +178,9 @@ function useTodoLogic() {
   const todos = ref<Todo[]>(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'))
   const loading = ref(false)
 
-  const save = useDebounceFn((data: Todo[]) => {
+  const save = (data: Todo[]) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
-  }, 500)
+  }
 
   watch(todos, (val) => save(val), { deep: true })
 
