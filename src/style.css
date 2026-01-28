@@ -1,0 +1,41 @@
+/*
+.ant-wave { display: none !important; }
+（已通过ConfigProvider禁用wave，css无需再设置。）*/
+
+/*关闭 按钮、输入框、选择器 的阴影效果*/
+.ant-btn-primary { box-shadow: none !important; }
+.ant-input:focus { box-shadow: none !important; }
+.ant-select-selector{ box-shadow: none !important; }
+
+:deep(.ant-page-header-heading-title) { font-size: 18px; font-weight: 600; }
+:deep(.ant-page-header-heading-sub-title) { font-size: 13px; color: #8c8c8c; }
+
+.todo-content { font-size: 15px; color: #262626; transition: all 0.3s ease; display: block; padding: 4px 0; }
+.todo-done { text-decoration: line-through; color: #bfbfbf; font-style: italic; }
+
+/* 新增样式 */
+.stat-card { border-radius: 8px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent; }
+/* 选中卡片的样式效果 */
+.active-card { border-color: #1890ff; background-color: #e6f7ff; }
+
+
+.ant-tag.tag1{ transition: all 0.3s ease; margin: 2px 4px 2px 0; }
+.ant-tag:hover.tag1{ transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+
+
+.no-select {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+}
+
+
+.ellipsis-tag {
+    max-width: 100px; /* 设置最大宽度 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
